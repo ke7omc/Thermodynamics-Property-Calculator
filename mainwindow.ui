@@ -1136,7 +1136,11 @@
       </property>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="1" column="3">
-        <widget class="QLineEdit" name="lineEdit_firstProperty"/>
+        <widget class="QLineEdit" name="lineEdit_firstPropertyValue">
+         <property name="text">
+          <string>273</string>
+         </property>
+        </widget>
        </item>
        <item row="0" column="5">
         <widget class="QLabel" name="label_secondProperty">
@@ -1160,7 +1164,11 @@
         </widget>
        </item>
        <item row="1" column="8">
-        <widget class="QLineEdit" name="lineEdit_secondProperty"/>
+        <widget class="QLineEdit" name="lineEdit_secondPropertyValue">
+         <property name="text">
+          <string>101325</string>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="QComboBox" name="comboBox_firstProperty">
@@ -1182,6 +1190,21 @@
          <item>
           <property name="text">
            <string>Entropy</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Quality</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Density</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Specific Volume</string>
           </property>
          </item>
         </widget>
