@@ -16,7 +16,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_listWidget_itemSelectionChanged();
+    void on_listWidget_quickList_itemSelectionChanged();
 
 private:
     Ui::MainWindow *ui;

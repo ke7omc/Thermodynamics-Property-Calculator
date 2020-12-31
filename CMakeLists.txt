@@ -38,6 +38,9 @@ if(ANDROID)
   )
 else()
   add_subdirectory ("${CMAKE_SOURCE_DIR}/CoolProp" CoolProp)
+  add_library(${PROJECT_NAME}_LIBRARIES STATIC
+    FluidsNamespace.hpp
+      )
   add_executable(ThermodynamicPropertyCalculator
     main.cpp
     mainwindow.cpp
