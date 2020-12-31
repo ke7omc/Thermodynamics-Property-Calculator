@@ -18,6 +18,8 @@ public:
 private slots:
     void on_listWidget_quickList_itemSelectionChanged();
 
+    void on_listWidget_allFluids_itemSelectionChanged();
+
 private:
     Ui::MainWindow *ui;
 };

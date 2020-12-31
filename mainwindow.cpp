@@ -18,5 +18,12 @@ MainWindow::~MainWindow()
 void MainWindow::on_listWidget_quickList_itemSelectionChanged()
 {
     FluidsNamespace::fluidName = ui->listWidget_quickList->currentItem()->text();
+    ui->lineEdit_chosenFluid->setText(FluidsNamespace::fluidName);
 }
 
+
+void MainWindow::on_listWidget_allFluids_itemSelectionChanged()
+{
+    FluidsNamespace::fluidName = ui->listWidget_allFluids->currentItem()->text();
+    ui->lineEdit_chosenFluid->setText(FluidsNamespace::fluidName);
+}
