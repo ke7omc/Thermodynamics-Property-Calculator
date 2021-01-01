@@ -169,6 +169,13 @@ void MainWindow::on_pushButton_calculate_clicked()
     std::string resultantAccentricFactor = std::to_string(FluidsNamespace::resultantAccentricFactor);
 
 
-    QString abc = QString::fromStdString(resultantInternalEnergyString);
-    ui->lineEdit_internalEnergy->setText(abc);
+    QString resultantInternalEnergyQString = QString::fromStdString(resultantInternalEnergyString);
+    QString resultantEnthalpyQString = QString::fromStdString(resultantEnthalpyString);
+    QString resultantTemperatureQString = QString::fromStdString(resultantTemperatureString);
+    QString resultantPressureQString = QString::fromStdString(resultantPressureString);
+    QString resultantEntropyQString = QString::fromStdString(resultantEntropyString);
+    QString resutantSpecificVolumeQString = QString::fromStdString(resultantSpecificVolumeString);
+    QString resultantQualityQString = QString::toStdString(resultantQualityString);
+    QString resultantDensityQString = ;
+    ui->lineEdit_internalEnergy->setText(resultantInternalEnergyQString);
 }
