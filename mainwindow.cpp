@@ -135,14 +135,14 @@ void MainWindow::on_pushButton_calculate_clicked()
     FluidsNamespace::resultantDensity = CoolProp::PropsSI("D",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
     FluidsNamespace::resultantSpecificVolume = 1/FluidsNamespace::resultantDensity;
     FluidsNamespace::resultantQuality = CoolProp::PropsSI("Q",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
-    FluidsNamespace::resultantConstantPressureSpecificHeat = CoolProp::PropsSI("C0",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
+    FluidsNamespace::resultantConstantPressureSpecificHeat = CoolProp::PropsSI("O",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
     FluidsNamespace::resultantConstantVolumeSpecificHeat = CoolProp::PropsSI("C",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
     FluidsNamespace::resultantDynamicViscosity = CoolProp::PropsSI("V",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
     FluidsNamespace::resultantKinematicViscosity = FluidsNamespace::resultantDynamicViscosity/FluidsNamespace::resultantDensity;
     FluidsNamespace::resultantThermalConductivity = CoolProp::PropsSI("L",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
     FluidsNamespace::resultantThermalDiffusivity = FluidsNamespace::resultantThermalConductivity/(FluidsNamespace::resultantDensity * FluidsNamespace::resultantConstantPressureSpecificHeat);
     FluidsNamespace::resultantSpeedOfSound = CoolProp::PropsSI("A",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
-    FluidsNamespace::resultantPrandtlNumber = FluidsNamespace::resultantKinematicViscosity/FluidsNamespace::resultantDensity;
+    FluidsNamespace::resultantPrandtlNumber = FluidsNamespace::resultantKinematicViscosity/FluidsNamespace::resultantThermalDiffusivity;
     FluidsNamespace::resultantSurfaceTension = CoolProp::PropsSI("I",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
     FluidsNamespace::resultantGibbsFunction = CoolProp::PropsSI("G",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
     FluidsNamespace::resultantAccentricFactor = CoolProp::PropsSI("w",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
@@ -190,7 +190,8 @@ void MainWindow::on_pushButton_calculate_clicked()
 
     ui->lineEdit_internalEnergy->setText(resultantInternalEnergyQString);
     ui->lineEdit_Enthalpy->setText(resultantEnthalpyQString);
-    ui->lineEdit_temperature->setText(resultantPressureQString);
+    ui->lineEdit_temperature->setText(resultantTemperatureQString);
+    ui->lineEdit_pressure->setText(resultantPressureQString);
     ui->lineEdit_entropy->setText(resultantEntropyQString);
     ui->lineEdit_specificVolume->setText(resultantSpecificVolumeQString);
     ui->lineEdit_quality->setText(resultantQualityQString);

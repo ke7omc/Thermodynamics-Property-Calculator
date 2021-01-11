@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>653</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,6 +15,196 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_chosenFluid">
+      <property name="text">
+       <string>Chosen Fluid:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_24">
+      <property name="text">
+       <string>Fluid Properties 1:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Fluid Properties 2:</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="3" column="3">
+        <widget class="QLabel" name="label_thermalDiffusivity">
+         <property name="text">
+          <string>Thermal Diffusivity (alpha)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="lineEdit_surfaceTension">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEdit_thermalConductivity">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_speedOfSound">
+         <property name="text">
+          <string>Speed of sound</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QLineEdit" name="lineEdit_kinematicViscosity">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_surfaceTension">
+         <property name="text">
+          <string>Surface Tension</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="4">
+        <widget class="QLineEdit" name="lineEdit_thermalDiffusivity">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_accentricFactor">
+         <property name="text">
+          <string>Accentric Factor</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_dynamicViscosity">
+         <property name="text">
+          <string>Dynamic Viscosity (mu)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <spacer name="horizontalSpacer_10">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLabel" name="label_prandtlNumber">
+         <property name="text">
+          <string>Prandtl Number</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_thermalConductivity">
+         <property name="text">
+          <string>Thermal Conductivity (k)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="label_kinematicViscosity">
+         <property name="text">
+          <string>Kinematic Viscosity (nu)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="lineEdit_accentricFactor">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="3">
+        <widget class="QLabel" name="label_gibbsFunction">
+         <property name="text">
+          <string>Gibbs Function</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEdit_dynamicViscosity">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="4">
+        <widget class="QLineEdit" name="lineEdit_prandtlNumber">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QLineEdit" name="lineEdit_constantVolumeSpecificHeat">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="lineEdit_speedOfSound">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="4">
+        <widget class="QLineEdit" name="lineEdit_gibbsFunction">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLabel" name="label_constantVolumeSpecificHeat">
+         <property name="text">
+          <string>Constant Volume Specific Heat</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEdit_constantPressureSpecificHeat">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_constantPressureSpecificHeat">
+         <property name="text">
+          <string>Constant Pressure Specific Heat</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="4" column="0">
      <widget class="QFrame" name="frame_4">
       <property name="frameShape">
@@ -105,298 +295,7 @@
       </layout>
      </widget>
     </item>
-    <item row="7" column="0">
-     <widget class="QFrame" name="frame">
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="6" column="4">
-        <widget class="QLineEdit" name="lineEdit_thermalDiffusivity">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="3">
-        <widget class="QLabel" name="label_specificVolume">
-         <property name="text">
-          <string>Specific Volume (v) =</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_entropy">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="3">
-        <widget class="QLabel" name="label_prandtlNumber">
-         <property name="text">
-          <string>Prandtl Number</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="4">
-        <widget class="QLineEdit" name="lineEdit_Enthalpy">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="4">
-        <widget class="QLineEdit" name="lineEdit_density">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="0">
-        <widget class="QLabel" name="label_accentricFactor">
-         <property name="text">
-          <string>Accentric Factor</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_quality">
-         <property name="text">
-          <string>Quality (x) =</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="QLabel" name="label_surfaceTension">
-         <property name="text">
-          <string>Surface Tension</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="3">
-        <widget class="QLabel" name="label_gibbsFunction">
-         <property name="text">
-          <string>Gibbs Function</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_dynamicViscosity">
-         <property name="text">
-          <string>Dynamic Viscosity (mu)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QLabel" name="label_pressure">
-         <property name="text">
-          <string>Pressure (P) =</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_constantPressureSpecificHeat">
-         <property name="text">
-          <string>Constant Pressure Specific Heat</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3">
-        <widget class="QLabel" name="label_enthalpy">
-         <property name="text">
-          <string>Enthalpy (h) =</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="1">
-        <widget class="QLineEdit" name="lineEdit_accentricFactor">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="lineEdit_constantPressureSpecificHeat">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_internalEnergy">
-         <property name="text">
-          <string>Internal Energy (u) =</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_temperature">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="3">
-        <widget class="QLabel" name="label_constantVolumeSpecificHeat">
-         <property name="text">
-          <string>Constant Volume Specific Heat</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QLineEdit" name="lineEdit_thermalConductivity">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_quality">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="4">
-        <widget class="QLineEdit" name="lineEdit_constantVolumeSpecificHeat">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="3">
-        <widget class="QLabel" name="label_kinematicViscosity">
-         <property name="text">
-          <string>Kinematic Viscosity (nu)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_temperature">
-         <property name="text">
-          <string>Temperature (T) =</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="4">
-        <widget class="QLineEdit" name="lineEdit_pressure">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="3">
-        <widget class="QLabel" name="label_thermalDiffusivity">
-         <property name="text">
-          <string>Thermal Diffusivity (alpha)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QLabel" name="label_speedOfSound">
-         <property name="text">
-          <string>Speed of sound</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="4">
-        <widget class="QLineEdit" name="lineEdit_kinematicViscosity">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QLineEdit" name="lineEdit_speedOfSound">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1">
-        <widget class="QLineEdit" name="lineEdit_surfaceTension">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="4">
-        <widget class="QLineEdit" name="lineEdit_gibbsFunction">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit_internalEnergy">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="4">
-        <widget class="QLineEdit" name="lineEdit_prandtlNumber">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_entropy">
-         <property name="text">
-          <string>Entropy (s) =</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="3">
-        <widget class="QLabel" name="label_density">
-         <property name="text">
-          <string>Density (&quot;U+03C1&quot;)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="4">
-        <widget class="QLineEdit" name="lineEdit_specificVolume">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="label_thermalConductivity">
-         <property name="text">
-          <string>Thermal Conductivity (k)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QLineEdit" name="lineEdit_dynamicViscosity">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="8" column="0">
+    <item row="10" column="0">
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -408,6 +307,186 @@
        </size>
       </property>
      </spacer>
+    </item>
+    <item row="11" column="0">
+     <widget class="QFrame" name="frame_5">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <spacer name="horizontalSpacer_9">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_calculate">
+         <property name="text">
+          <string>Calculate</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QFrame" name="frame_3">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="1" column="3">
+        <widget class="QLineEdit" name="lineEdit_firstPropertyValue">
+         <property name="text">
+          <string>273</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QLabel" name="label_secondProperty">
+         <property name="text">
+          <string>Second Independent, Intensive Property:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="label_27">
+         <property name="text">
+          <string>=</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_firstProperty">
+         <property name="text">
+          <string>First Independent, Intensive Property:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="8">
+        <widget class="QLineEdit" name="lineEdit_secondPropertyValue">
+         <property name="text">
+          <string>101325</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QComboBox" name="comboBox_firstProperty">
+         <item>
+          <property name="text">
+           <string>Temperature</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Pressure</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Enthalpy</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Entropy</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Quality</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Density</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Specific Volume</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="9">
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="5">
+        <widget class="QComboBox" name="comboBox_secondProperty">
+         <item>
+          <property name="text">
+           <string>Pressure</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Density</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Quality</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Enthalpy</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Entropy</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="7">
+        <widget class="QLabel" name="label_28">
+         <property name="text">
+          <string>=</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
     <item row="2" column="0">
      <widget class="QFrame" name="frame_2">
@@ -1080,31 +1159,94 @@
       </layout>
      </widget>
     </item>
-    <item row="6" column="0">
-     <widget class="QLabel" name="label_24">
-      <property name="text">
-       <string>Fluid Properties:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="label_chosenFluid">
-      <property name="text">
-       <string>Chosen Fluid:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="0">
-     <widget class="QFrame" name="frame_5">
+    <item row="7" column="0">
+     <widget class="QFrame" name="frame">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <spacer name="horizontalSpacer_9">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEdit_entropy">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEdit_temperature">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_internalEnergy">
+         <property name="text">
+          <string>Internal Energy (u) =</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_temperature">
+         <property name="text">
+          <string>Temperature (T) =</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEdit_internalEnergy">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QLabel" name="label_density">
+         <property name="text">
+          <string>Density (&quot;U+03C1&quot;)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="lineEdit_quality">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_quality">
+         <property name="text">
+          <string>Quality (x) =</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QLineEdit" name="lineEdit_specificVolume">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="label_specificVolume">
+         <property name="text">
+          <string>Specific Volume (v) =</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QLineEdit" name="lineEdit_pressure">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <spacer name="horizontalSpacer">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -1116,160 +1258,52 @@
          </property>
         </spacer>
        </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_calculate">
+       <item row="3" column="4">
+        <widget class="QLineEdit" name="lineEdit_density">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_entropy">
          <property name="text">
-          <string>Calculate</string>
+          <string>Entropy (s) =</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLabel" name="label_pressure">
+         <property name="text">
+          <string>Pressure (P) =</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QLineEdit" name="lineEdit_Enthalpy">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="label_enthalpy">
+         <property name="text">
+          <string>Enthalpy (h) =</string>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
     </item>
-    <item row="5" column="0">
-     <widget class="QFrame" name="frame_3">
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+    <item row="9" column="0">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>GroupBox</string>
       </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_4">
-       <item row="1" column="3">
-        <widget class="QLineEdit" name="lineEdit_firstPropertyValue">
-         <property name="text">
-          <string>273</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="5">
-        <widget class="QLabel" name="label_secondProperty">
-         <property name="text">
-          <string>Second Independent, Intensive Property:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QLabel" name="label_27">
-         <property name="text">
-          <string>=</string>
-         </property>
-        </widget>
-       </item>
+      <layout class="QGridLayout" name="gridLayout_7">
        <item row="0" column="0">
-        <widget class="QLabel" name="label_firstProperty">
-         <property name="text">
-          <string>First Independent, Intensive Property:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="8">
-        <widget class="QLineEdit" name="lineEdit_secondPropertyValue">
-         <property name="text">
-          <string>101325</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QComboBox" name="comboBox_firstProperty">
-         <item>
-          <property name="text">
-           <string>Temperature</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Pressure</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Enthalpy</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Entropy</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Quality</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Density</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Specific Volume</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="1" column="4">
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="9">
-        <spacer name="horizontalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="5">
-        <widget class="QComboBox" name="comboBox_secondProperty">
-         <item>
-          <property name="text">
-           <string>Pressure</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Density</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Quality</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Enthalpy</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Entropy</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="1" column="7">
-        <widget class="QLabel" name="label_28">
-         <property name="text">
-          <string>=</string>
-         </property>
-        </widget>
+        <widget class="QLineEdit" name="lineEdit"/>
        </item>
       </layout>
      </widget>
