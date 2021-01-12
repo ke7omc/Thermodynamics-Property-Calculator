@@ -208,3 +208,42 @@ void MainWindow::on_pushButton_calculate_clicked()
     ui->lineEdit_gibbsFunction->setText(resultantGibbsFunctionQString);
     ui->lineEdit_accentricFactor->setText(resultantAccentricFactorQString);
 }
+
+void MainWindow::on_radioButton_standard_clicked()
+{
+    QString standardInternalEnergyUnits = "Btu/lbm";
+    QString standardEnthalpyUnits = "Btu/lbm";
+    QString standardPressureUnits = "psia";
+    QString standardEntropyUnits = "Btu/lbm*R";
+    QString standardSpecificVolumeUnits = "ft^3/lbm";
+    QString standardDensityUnits = "lbm/ft^3";
+    QString standardTemperatureUnits = "R";
+
+    ui->label_internalEnergyUnits->setText(standardInternalEnergyUnits);
+    ui->label_enthalpyUnits->setText(standardEnthalpyUnits);
+    ui->label_pressureUnits->setText(standardPressureUnits);
+    ui->label_entropyUnits->setText(standardEntropyUnits);
+    ui->label_specificVolumeUnits->setText(standardSpecificVolumeUnits);
+    ui->label_densityUnits->setText(standardDensityUnits);
+    ui->label_temperatureUnits->setText(standardTemperatureUnits);
+}
+
+void MainWindow::on_radioButton_metric_clicked()
+{
+    QString standardInternalEnergyUnits = "kJ/kg";
+    QString standardEnthalpyUnits = "kJ/kg";
+    QString standardPressureUnits = "kPa";
+    QString standardEntropyUnits = "kJ/kg*K";
+    QString standardSpecificVolumeUnits = "m^3/kg";
+    QString standardDensityUnits = "kg/m^3";
+    QString standardTemperatureUnits = "K";
+
+    ui->label_internalEnergyUnits->setText(standardInternalEnergyUnits);
+    ui->label_enthalpyUnits->setText(standardEnthalpyUnits);
+    ui->label_pressureUnits->setText(standardPressureUnits);
+    ui->label_entropyUnits->setText(standardEntropyUnits);
+    ui->label_specificVolumeUnits->setText(standardSpecificVolumeUnits);
+    ui->label_densityUnits->setText(standardDensityUnits);
+    ui->label_temperatureUnits->setText(standardTemperatureUnits);
+
+}

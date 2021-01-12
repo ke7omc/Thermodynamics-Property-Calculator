@@ -32,6 +32,10 @@ private slots:
 
     void on_pushButton_calculate_clicked();
 
+    void on_radioButton_standard_clicked();
+
+    void on_radioButton_metric_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
