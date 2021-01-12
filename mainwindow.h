@@ -38,5 +38,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    void changeLabelUnits(bool metricSystem);
 };
 #endif // MAINWINDOW_H

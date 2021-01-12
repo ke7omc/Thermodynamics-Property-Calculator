@@ -119,7 +119,7 @@
        <item row="2" column="2">
         <widget class="QLabel" name="label_entropyUnits">
          <property name="text">
-          <string>kJ/kg*K</string>
+          <string>J/kg*K</string>
          </property>
         </widget>
        </item>
@@ -139,7 +139,7 @@
        <item row="0" column="2">
         <widget class="QLabel" name="label_internalEnergyUnits">
          <property name="text">
-          <string>kJ/kg</string>
+          <string>J/kg</string>
          </property>
         </widget>
        </item>
@@ -181,14 +181,14 @@
        <item row="0" column="6">
         <widget class="QLabel" name="label_enthalpyUnits">
          <property name="text">
-          <string>kJ/kg</string>
+          <string>J/kg</string>
          </property>
         </widget>
        </item>
        <item row="1" column="6">
         <widget class="QLabel" name="label_pressureUnits">
          <property name="text">
-          <string>kPa</string>
+          <string>Pa</string>
          </property>
         </widget>
        </item>
@@ -209,7 +209,7 @@
        <item row="3" column="0">
         <widget class="QLabel" name="label_density">
          <property name="text">
-          <string>Density (&quot;U+03C1&quot;)</string>
+          <string>Density (rho)</string>
          </property>
         </widget>
        </item>
@@ -247,7 +247,7 @@
       </layout>
      </widget>
     </item>
-    <item row="8" column="0">
+    <item row="10" column="0">
      <widget class="QGroupBox" name="groupBox">
       <property name="title">
        <string>Fluid Properties 2:</string>
@@ -576,7 +576,7 @@
       </layout>
      </widget>
     </item>
-    <item row="9" column="0">
+    <item row="11" column="0">
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -589,7 +589,7 @@
       </property>
      </spacer>
     </item>
-    <item row="10" column="0">
+    <item row="12" column="0">
      <widget class="QFrame" name="frame_5">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -630,6 +630,13 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout_4">
+       <item row="1" column="11">
+        <widget class="QLabel" name="label_secondPropertyUnits">
+         <property name="text">
+          <string>kPa</string>
+         </property>
+        </widget>
+       </item>
        <item row="1" column="2">
         <widget class="QLabel" name="label_27">
          <property name="text">
@@ -693,19 +700,6 @@
           </property>
          </item>
         </widget>
-       </item>
-       <item row="1" column="10">
-        <spacer name="horizontalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
        </item>
        <item row="1" column="3">
         <widget class="QLineEdit" name="lineEdit_firstPropertyValue">
@@ -773,12 +767,18 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="11">
-        <widget class="QLabel" name="label_secondPropertyUnits">
-         <property name="text">
-          <string>TextLabel</string>
+       <item row="1" column="12">
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
-        </widget>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
@@ -1466,6 +1466,34 @@
        </size>
       </property>
      </spacer>
+    </item>
+    <item row="8" column="0">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="0" column="0">
+        <widget class="QLineEdit" name="lineEdit_phaseMessage"/>
+       </item>
+       <item row="0" column="1">
+        <spacer name="horizontalSpacer_12">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
     </item>
    </layout>
   </widget>

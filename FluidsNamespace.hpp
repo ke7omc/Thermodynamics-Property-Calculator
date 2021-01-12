@@ -19,6 +19,8 @@ namespace FluidsNamespace
     double resultantSpecificVolume(0);
     double resultantQuality(0);
     double resultantDensity(0);
+    double saturatedLiquidDensity(0);
+    double saturatedVaporDensity(0);
     double resultantConstantPressureSpecificHeat(0);
     double resultantConstantVolumeSpecificHeat(0);
     double resultantDynamicViscosity(0);

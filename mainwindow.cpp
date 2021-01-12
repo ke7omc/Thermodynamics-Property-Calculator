@@ -15,6 +15,22 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+bool metricSystem(true);
+QString metricInternalEnergyUnits = "J/kg";
+QString metricEnthalpyUnits = "J/kg";
+QString metricPressureUnits = "Pa";
+QString metricEntropyUnits = "J/kg*K";
+QString metricSpecificVolumeUnits = "m^3/kg";
+QString metricDensityUnits = "kg/m^3";
+QString metricTemperatureUnits = "K";
+QString standardInternalEnergyUnits = "Btu/lbm";
+QString standardEnthalpyUnits = "Btu/lbm";
+QString standardPressureUnits = "psia";
+QString standardEntropyUnits = "Btu/lbm*R";
+QString standardSpecificVolumeUnits = "ft^3/lbm";
+QString standardDensityUnits = "lbm/ft^3";
+QString standardTemperatureUnits = "R";
+
 void MainWindow::on_listWidget_quickList_itemSelectionChanged()
 {
     FluidsNamespace::fluidName = ui->listWidget_quickList->currentItem()->text();
@@ -36,6 +52,15 @@ void MainWindow::on_comboBox_firstProperty_currentIndexChanged(const QString &fi
     if (firstPropertyName == "Temperature")
     {
         FluidsNamespace::firstPropertyVariable = "T";
+        if (metricSystem)
+        {
+            ui->label_firstPropertyUnits->setText(metricTemperatureUnits);
+        }
+        else
+        {
+            ui->label_firstPropertyUnits->setText(standardTemperatureUnits);
+        }
+
         ui->comboBox_secondProperty->clear();
         ui->comboBox_secondProperty->addItem("Pressure");
         ui->comboBox_secondProperty->addItem("Density");
@@ -45,6 +70,14 @@ void MainWindow::on_comboBox_firstProperty_currentIndexChanged(const QString &fi
     else if (firstPropertyName == "Pressure")
     {
         FluidsNamespace::firstPropertyVariable = "P";
+        if (metricSystem)
+        {
+            ui->label_firstPropertyUnits->setText(metricPressureUnits);
+        }
+        else
+        {
+            ui->label_firstPropertyUnits->setText(standardPressureUnits);
+        }
         ui->comboBox_secondProperty->clear();
         ui->comboBox_secondProperty->addItem("Density");
         ui->comboBox_secondProperty->addItem("Quality");
@@ -52,12 +85,28 @@ void MainWindow::on_comboBox_firstProperty_currentIndexChanged(const QString &fi
     else if (firstPropertyName == "Enthalpy")
     {
         FluidsNamespace::firstPropertyVariable = "H";
+        if (metricSystem)
+        {
+            ui->label_firstPropertyUnits->setText(metricEnthalpyUnits);
+        }
+        else
+        {
+            ui->label_firstPropertyUnits->setText(standardEnthalpyUnits);
+        }
         ui->comboBox_secondProperty->clear();
         ui->comboBox_secondProperty->addItem("Pressure");
     }
     else if (firstPropertyName == "Entropy")
     {
         FluidsNamespace::firstPropertyVariable = "S";
+        if (metricSystem)
+        {
+            ui->label_firstPropertyUnits->setText(metricEntropyUnits);
+        }
+        else
+        {
+            ui->label_firstPropertyUnits->setText(standardEntropyUnits);
+        }
         ui->comboBox_secondProperty->clear();
         ui->comboBox_secondProperty->addItem("Pressure");
         ui->comboBox_secondProperty->addItem("Enthalpy");
@@ -72,6 +121,14 @@ void MainWindow::on_comboBox_firstProperty_currentIndexChanged(const QString &fi
     else if (firstPropertyName == "Density")
     {
         FluidsNamespace::firstPropertyVariable = "D";
+        if (metricSystem)
+        {
+            ui->label_firstPropertyUnits->setText(metricDensityUnits);
+        }
+        else
+        {
+            ui->label_firstPropertyUnits->setText(standardDensityUnits);
+        }
         ui->comboBox_secondProperty->clear();
         ui->comboBox_secondProperty->addItem("Temperature");
         ui->comboBox_secondProperty->addItem("Pressure");
@@ -93,14 +150,38 @@ void MainWindow::on_comboBox_secondProperty_currentIndexChanged(const QString &s
     if (secondPropertyName == "Pressure")
     {
         FluidsNamespace::secondPropertyVariable = "P";
+        if (metricSystem)
+        {
+            ui->label_secondPropertyUnits->setText(metricPressureUnits);
+        }
+        else
+        {
+            ui->label_secondPropertyUnits->setText(standardPressureUnits);
+        }
     }
     else if (secondPropertyName == "Enthalpy")
     {
         FluidsNamespace::secondPropertyVariable = "H";
+        if (metricSystem)
+        {
+            ui->label_secondPropertyUnits->setText(metricEnthalpyUnits);
+        }
+        else
+        {
+            ui->label_secondPropertyUnits->setText(standardEnthalpyUnits);
+        }
     }
     else if (secondPropertyName == "Entropy")
     {
         FluidsNamespace::secondPropertyVariable = "S";
+        if (metricSystem)
+        {
+            ui->label_secondPropertyUnits->setText(metricEntropyUnits);
+        }
+        else
+        {
+            ui->label_secondPropertyUnits->setText(standardEntropyUnits);
+        }
     }
     else if (secondPropertyName == "Quality")
     {
@@ -109,6 +190,14 @@ void MainWindow::on_comboBox_secondProperty_currentIndexChanged(const QString &s
     else if (secondPropertyName == "Density")
     {
         FluidsNamespace::secondPropertyVariable = "D";
+        if (metricSystem)
+        {
+            ui->label_secondPropertyUnits->setText(metricDensityUnits);
+        }
+        else
+        {
+            ui->label_secondPropertyUnits->setText(standardDensityUnits);
+        }
     }
 
 }
@@ -123,8 +212,6 @@ void MainWindow::on_lineEdit_secondPropertyValue_textEdited(const QString &secon
     FluidsNamespace::secondPropertyValue = secondPropertyValueQString.toDouble();
 }
 
-
-
 void MainWindow::on_pushButton_calculate_clicked()
 {
     FluidsNamespace::resultantInternalEnergy = CoolProp::PropsSI("U",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
@@ -133,6 +220,7 @@ void MainWindow::on_pushButton_calculate_clicked()
     FluidsNamespace::resultantPressure = CoolProp::PropsSI("P",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
     FluidsNamespace::resultantEntropy = CoolProp::PropsSI("S",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
     FluidsNamespace::resultantDensity = CoolProp::PropsSI("D",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
+//    FluidsNamespace::saturatedLiquidDensity = CoolProp::PropsSI("D",)
     FluidsNamespace::resultantSpecificVolume = 1/FluidsNamespace::resultantDensity;
     FluidsNamespace::resultantQuality = CoolProp::PropsSI("Q",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
     FluidsNamespace::resultantConstantPressureSpecificHeat = CoolProp::PropsSI("O",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
@@ -207,43 +295,94 @@ void MainWindow::on_pushButton_calculate_clicked()
     ui->lineEdit_surfaceTension->setText(resultantSurfaceTensionQString);
     ui->lineEdit_gibbsFunction->setText(resultantGibbsFunctionQString);
     ui->lineEdit_accentricFactor->setText(resultantAccentricFactorQString);
+
+    if(FluidsNamespace::resultantQuality == -1.0)
+    {
+        QString compressedLiquidMessage = "The phase of this substance is a compressed liquid.";
+        ui->lineEdit_phaseMessage->setText(compressedLiquidMessage);
+    }
+    else if (FluidsNamespace::resultantQuality == 1.0)
+    {
+        QString gasMessage = "The phase of this substance is a gas.";
+        ui->lineEdit_phaseMessage->setText(gasMessage);
+    }
+    else
+    {
+        QString saturatedLiquidVaporMixtureMessage = "The phase of this substance is a saturated liquid-vapor mixture.";
+        ui->lineEdit_phaseMessage->setText(saturatedLiquidVaporMixtureMessage);
+    }
 }
 
 void MainWindow::on_radioButton_standard_clicked()
 {
-    QString standardInternalEnergyUnits = "Btu/lbm";
-    QString standardEnthalpyUnits = "Btu/lbm";
-    QString standardPressureUnits = "psia";
-    QString standardEntropyUnits = "Btu/lbm*R";
-    QString standardSpecificVolumeUnits = "ft^3/lbm";
-    QString standardDensityUnits = "lbm/ft^3";
-    QString standardTemperatureUnits = "R";
-
-    ui->label_internalEnergyUnits->setText(standardInternalEnergyUnits);
-    ui->label_enthalpyUnits->setText(standardEnthalpyUnits);
-    ui->label_pressureUnits->setText(standardPressureUnits);
-    ui->label_entropyUnits->setText(standardEntropyUnits);
-    ui->label_specificVolumeUnits->setText(standardSpecificVolumeUnits);
-    ui->label_densityUnits->setText(standardDensityUnits);
-    ui->label_temperatureUnits->setText(standardTemperatureUnits);
+    metricSystem = false;
+    MainWindow::changeLabelUnits(metricSystem);
+    ui->lineEdit_internalEnergy->clear();
+    ui->lineEdit_Enthalpy->clear();
+    ui->lineEdit_temperature->clear();
+    ui->lineEdit_pressure->clear();
+    ui->lineEdit_entropy->clear();
+    ui->lineEdit_specificVolume->clear();
+    ui->lineEdit_density->clear();
+    ui->lineEdit_quality->clear();
+    ui->lineEdit_constantPressureSpecificHeat->clear();
+    ui->lineEdit_constantVolumeSpecificHeat->clear();
+    ui->lineEdit_dynamicViscosity->clear();
+    ui->lineEdit_kinematicViscosity->clear();
+    ui->lineEdit_thermalConductivity->clear();
+    ui->lineEdit_thermalDiffusivity->clear();
+    ui->lineEdit_speedOfSound->clear();
+    ui->lineEdit_gibbsFunction->clear();
+    ui->lineEdit_surfaceTension->clear();
+    ui->lineEdit_prandtlNumber->clear();
+    ui->lineEdit_accentricFactor->clear();
 }
 
 void MainWindow::on_radioButton_metric_clicked()
 {
-    QString standardInternalEnergyUnits = "kJ/kg";
-    QString standardEnthalpyUnits = "kJ/kg";
-    QString standardPressureUnits = "kPa";
-    QString standardEntropyUnits = "kJ/kg*K";
-    QString standardSpecificVolumeUnits = "m^3/kg";
-    QString standardDensityUnits = "kg/m^3";
-    QString standardTemperatureUnits = "K";
+    metricSystem = true;
+    MainWindow::changeLabelUnits(metricSystem);
+    ui->lineEdit_internalEnergy->clear();
+    ui->lineEdit_Enthalpy->clear();
+    ui->lineEdit_temperature->clear();
+    ui->lineEdit_pressure->clear();
+    ui->lineEdit_entropy->clear();
+    ui->lineEdit_specificVolume->clear();
+    ui->lineEdit_density->clear();
+    ui->lineEdit_quality->clear();
+    ui->lineEdit_constantPressureSpecificHeat->clear();
+    ui->lineEdit_constantVolumeSpecificHeat->clear();
+    ui->lineEdit_dynamicViscosity->clear();
+    ui->lineEdit_kinematicViscosity->clear();
+    ui->lineEdit_thermalConductivity->clear();
+    ui->lineEdit_thermalDiffusivity->clear();
+    ui->lineEdit_speedOfSound->clear();
+    ui->lineEdit_gibbsFunction->clear();
+    ui->lineEdit_surfaceTension->clear();
+    ui->lineEdit_prandtlNumber->clear();
+    ui->lineEdit_accentricFactor->clear();
+}
 
-    ui->label_internalEnergyUnits->setText(standardInternalEnergyUnits);
-    ui->label_enthalpyUnits->setText(standardEnthalpyUnits);
-    ui->label_pressureUnits->setText(standardPressureUnits);
-    ui->label_entropyUnits->setText(standardEntropyUnits);
-    ui->label_specificVolumeUnits->setText(standardSpecificVolumeUnits);
-    ui->label_densityUnits->setText(standardDensityUnits);
-    ui->label_temperatureUnits->setText(standardTemperatureUnits);
-
+void MainWindow::changeLabelUnits(bool metricSystem)
+{
+    if(metricSystem)
+    {
+        ui->label_internalEnergyUnits->setText(metricInternalEnergyUnits);
+        ui->label_enthalpyUnits->setText(metricEnthalpyUnits);
+        ui->label_pressureUnits->setText(metricPressureUnits);
+        ui->label_entropyUnits->setText(metricEntropyUnits);
+        ui->label_specificVolumeUnits->setText(metricSpecificVolumeUnits);
+        ui->label_densityUnits->setText(metricDensityUnits);
+        ui->label_temperatureUnits->setText(metricTemperatureUnits);
+    }
+    else
+    {
+        ui->label_internalEnergyUnits->setText(standardInternalEnergyUnits);
+        ui->label_enthalpyUnits->setText(standardEnthalpyUnits);
+        ui->label_pressureUnits->setText(standardPressureUnits);
+        ui->label_entropyUnits->setText(standardEntropyUnits);
+        ui->label_specificVolumeUnits->setText(standardSpecificVolumeUnits);
+        ui->label_densityUnits->setText(standardDensityUnits);
+        ui->label_temperatureUnits->setText(standardTemperatureUnits);
+    }
 }
