@@ -336,6 +336,7 @@ void MainWindow::on_radioButton_standard_clicked()
     ui->lineEdit_surfaceTension->clear();
     ui->lineEdit_prandtlNumber->clear();
     ui->lineEdit_accentricFactor->clear();
+    ui->lineEdit_phaseMessage->clear();
 }
 
 void MainWindow::on_radioButton_metric_clicked()
@@ -361,6 +362,7 @@ void MainWindow::on_radioButton_metric_clicked()
     ui->lineEdit_surfaceTension->clear();
     ui->lineEdit_prandtlNumber->clear();
     ui->lineEdit_accentricFactor->clear();
+    ui->lineEdit_phaseMessage->clear();
 }
 
 void MainWindow::changeLabelUnits(bool metricSystem)
