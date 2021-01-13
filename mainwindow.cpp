@@ -19,6 +19,7 @@ double BTUPerKiloJoule(0.94782);
 double kgPerlbm(0.45359237);
 double psiaPerkPa(0.14504);
 double kelvinToRankine(1.8);
+double feetCubedPerMeterCubed(35.313378);
 
 bool metricSystem(true);
 
@@ -263,8 +264,8 @@ void MainWindow::on_pushButton_calculate_clicked()
         FluidsNamespace::resultantTemperature = FluidsNamespace::resultantTemperature*kelvinToRankine;
         FluidsNamespace::resultantPressure = FluidsNamespace::resultantPressure*psiaPerkPa;
         FluidsNamespace::resultantEntropy = FluidsNamespace::resultantEntropy*BTUPerKiloJoule*kgPerlbm/kelvinToRankine;
-//        FluidsNamespace::resultantDensity = ;
-//        FluidsNamespace::resultantSpecificVolume = ;
+        FluidsNamespace::resultantDensity = FluidsNamespace::resultantDensity/(feetCubedPerMeterCubed*kgPerlbm);
+        FluidsNamespace::resultantSpecificVolume = 1/FluidsNamespace::resultantDensity;
     }
 
     std::string resultantInternalEnergyString = std::to_string(FluidsNamespace::resultantInternalEnergy);
