@@ -260,13 +260,6 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="lineEdit_surfaceTension">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="1">
         <widget class="QLineEdit" name="lineEdit_thermalConductivity">
          <property name="readOnly">
@@ -278,6 +271,13 @@
         <widget class="QLineEdit" name="lineEdit_kinematicViscosity">
          <property name="readOnly">
           <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_constantPressureSpecificHeatUnits">
+         <property name="text">
+          <string>J/kg*K</string>
          </property>
         </widget>
        </item>
@@ -295,17 +295,17 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="label_constantPressureSpecificHeatUnits">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="2">
         <widget class="QLabel" name="label_dynamicViscosityUnits">
          <property name="text">
-          <string>TextLabel</string>
+          <string>N*s/m^2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="6">
+        <widget class="QLabel" name="label_thermalDiffusivityUnits">
+         <property name="text">
+          <string>m^2/s</string>
          </property>
         </widget>
        </item>
@@ -320,20 +320,6 @@
         <widget class="QLabel" name="label_constantVolumeSpecificHeat">
          <property name="text">
           <string>Constant Volume Specific Heat</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_surfaceTension">
-         <property name="text">
-          <string>Surface Tension</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_accentricFactor">
-         <property name="text">
-          <string>Accentric Factor</string>
          </property>
         </widget>
        </item>
@@ -354,7 +340,14 @@
        <item row="2" column="2">
         <widget class="QLabel" name="label_thermalConductivityUnits">
          <property name="text">
-          <string>TextLabel</string>
+          <string>W/m*K</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="6">
+        <widget class="QLabel" name="label_kinematicViscosityUnits">
+         <property name="text">
+          <string>m^2/s</string>
          </property>
         </widget>
        </item>
@@ -385,13 +378,6 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
-        <widget class="QLineEdit" name="lineEdit_accentricFactor">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="4">
         <widget class="QLabel" name="label_kinematicViscosity">
          <property name="text">
@@ -406,17 +392,17 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="2">
-        <widget class="QLabel" name="label_surfaceTensionUnits">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
        <item row="3" column="2">
         <widget class="QLabel" name="label_speedOfSoundUnits">
          <property name="text">
-          <string>TextLabel</string>
+          <string>m/s</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="6">
+        <widget class="QLabel" name="label_constantVolumeSpecificHeatUnits">
+         <property name="text">
+          <string>J/kg*K</string>
          </property>
         </widget>
        </item>
@@ -427,56 +413,14 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="6">
-        <widget class="QLabel" name="label_constantVolumeSpecificHeatUnits">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="6">
-        <widget class="QLabel" name="label_kinematicViscosityUnits">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="6">
-        <widget class="QLabel" name="label_thermalDiffusivityUnits">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
        <item row="3" column="4">
-        <widget class="QLabel" name="label_gibbsFunction">
-         <property name="text">
-          <string>Gibbs Function</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="5">
-        <widget class="QLineEdit" name="lineEdit_gibbsFunction">
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="6">
-        <widget class="QLabel" name="label_gibbsFunctionUnits">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="4">
         <widget class="QLabel" name="label_prandtlNumber">
          <property name="text">
           <string>Prandtl Number</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="5">
+       <item row="3" column="5">
         <widget class="QLineEdit" name="lineEdit_prandtlNumber">
          <property name="readOnly">
           <bool>true</bool>
