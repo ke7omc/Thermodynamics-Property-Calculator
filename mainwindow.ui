@@ -139,7 +139,7 @@
        <item row="0" column="2">
         <widget class="QLabel" name="label_internalEnergyUnits">
          <property name="text">
-          <string>J/kg</string>
+          <string>kJ/kg</string>
          </property>
         </widget>
        </item>
@@ -181,14 +181,14 @@
        <item row="0" column="6">
         <widget class="QLabel" name="label_enthalpyUnits">
          <property name="text">
-          <string>J/kg</string>
+          <string>kJ/kg</string>
          </property>
         </widget>
        </item>
        <item row="1" column="6">
         <widget class="QLabel" name="label_pressureUnits">
          <property name="text">
-          <string>Pa</string>
+          <string>kPa</string>
          </property>
         </widget>
        </item>

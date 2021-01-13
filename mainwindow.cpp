@@ -15,7 +15,13 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+double BTUPerKiloJoule(0.94782);
+double kgPerlbm(0.45359237);
+double psiaPerkPa(0.14504);
+double kelvinToRankine(1.8);
+
 bool metricSystem(true);
+
 QString metricInternalEnergyUnits = "J/kg";
 QString metricEnthalpyUnits = "J/kg";
 QString metricPressureUnits = "Pa";
@@ -232,11 +238,11 @@ void MainWindow::on_lineEdit_secondPropertyValue_textEdited(const QString &secon
 
 void MainWindow::on_pushButton_calculate_clicked()
 {
-    FluidsNamespace::resultantInternalEnergy = CoolProp::PropsSI("U",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
-    FluidsNamespace::resultantEnthalpy = CoolProp::PropsSI("H",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
+    FluidsNamespace::resultantInternalEnergy = CoolProp::PropsSI("U",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString())/1000;
+    FluidsNamespace::resultantEnthalpy = CoolProp::PropsSI("H",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString())/1000;
     FluidsNamespace::resultantTemperature = CoolProp::PropsSI("T",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
-    FluidsNamespace::resultantPressure = CoolProp::PropsSI("P",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
-    FluidsNamespace::resultantEntropy = CoolProp::PropsSI("S",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
+    FluidsNamespace::resultantPressure = CoolProp::PropsSI("P",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString())/1000;
+    FluidsNamespace::resultantEntropy = CoolProp::PropsSI("S",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString())/1000;
     FluidsNamespace::resultantDensity = CoolProp::PropsSI("D",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
 //    FluidsNamespace::saturatedLiquidDensity = CoolProp::PropsSI("D",)
     FluidsNamespace::resultantSpecificVolume = 1/FluidsNamespace::resultantDensity;
@@ -249,6 +255,17 @@ void MainWindow::on_pushButton_calculate_clicked()
     FluidsNamespace::resultantThermalDiffusivity = FluidsNamespace::resultantThermalConductivity/(FluidsNamespace::resultantDensity * FluidsNamespace::resultantConstantPressureSpecificHeat);
     FluidsNamespace::resultantSpeedOfSound = CoolProp::PropsSI("A",FluidsNamespace::firstPropertyVariable.toStdString(),FluidsNamespace::firstPropertyValue,FluidsNamespace::secondPropertyVariable.toStdString(),FluidsNamespace::secondPropertyValue,FluidsNamespace::fluidName.toStdString());
     FluidsNamespace::resultantPrandtlNumber = FluidsNamespace::resultantKinematicViscosity/FluidsNamespace::resultantThermalDiffusivity;
+
+    if (metricSystem == false)
+    {
+        FluidsNamespace::resultantInternalEnergy = FluidsNamespace::resultantInternalEnergy*BTUPerKiloJoule*kgPerlbm;
+        FluidsNamespace::resultantEnthalpy = FluidsNamespace::resultantEnthalpy*BTUPerKiloJoule*kgPerlbm;
+        FluidsNamespace::resultantTemperature = FluidsNamespace::resultantTemperature*kelvinToRankine;
+        FluidsNamespace::resultantPressure = FluidsNamespace::resultantPressure*psiaPerkPa;
+        FluidsNamespace::resultantEntropy = FluidsNamespace::resultantEntropy*BTUPerKiloJoule*kgPerlbm/kelvinToRankine;
+//        FluidsNamespace::resultantDensity = ;
+//        FluidsNamespace::resultantSpecificVolume = ;
+    }
 
     std::string resultantInternalEnergyString = std::to_string(FluidsNamespace::resultantInternalEnergy);
     std::string resultantEnthalpyString = std::to_string(FluidsNamespace::resultantEnthalpy);
